@@ -8,6 +8,10 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import joblib
 import time
 import os
+from download_model import download_all_files  # thêm dòng này
+
+# Nếu model/tokenizer chưa tồn tại thì tải từ Drive
+download_all_files()
 
 # Load model/tokenizer/encoder
 MODEL_PATH = "app/phobert_model"
