@@ -8,22 +8,28 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import joblib
 import time
 import os
-from download_model import download_all_files  # thêm dòng này
 
-# Nếu model/tokenizer chưa tồn tại thì tải từ Drive
-download_all_files()
+# === Load mô hình, tokenizer và label encoder từ Hugging Face ===
+@st.cache_resource
+def load_model():
+    model = AutoModelForSequenceClassification.from_pretrained("Huy111204/phobert-vietnamese-sentiment")
+    return model.to("cuda" if torch.cuda.is_available() else "cpu")
 
-# Load model/tokenizer/encoder
-MODEL_PATH = "app/phobert_model"
-TOKENIZER_PATH = "app/phobert_tokenizer"
-ENCODER_PATH = "app/label_encoder.pkl"
-FEEDBACK_PATH = "app/feedback.csv"
+@st.cache_resource
+def load_tokenizer():
+    return AutoTokenizer.from_pretrained("Huy111204/phobert-vietnamese-sentiment/tokenizer")
 
-model = AutoModelForSequenceClassification.from_pretrained(MODEL_PATH).to("cuda" if torch.cuda.is_available() else "cpu")
-tokenizer = AutoTokenizer.from_pretrained(TOKENIZER_PATH)
-encoder = joblib.load(ENCODER_PATH)
+@st.cache_data
+def load_encoder():
+    from huggingface_hub import hf_hub_download
+    encoder_path = hf_hub_download(repo_id="Huy111204/phobert-vietnamese-sentiment", filename="label_encoder.pkl")
+    return joblib.load(encoder_path)
 
-# Predict comment
+model = load_model()
+tokenizer = load_tokenizer()
+encoder = load_encoder()
+
+# === Dự đoán cảm xúc ===
 def predict(text):
     model.eval()
     inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True, max_length=64).to(model.device)
@@ -32,7 +38,7 @@ def predict(text):
         pred = torch.argmax(outputs.logits, dim=1).cpu().numpy()[0]
     return encoder.inverse_transform([pred])[0]
 
-# App UI
+# === Giao diện Streamlit ===
 st.set_page_config(page_title="Vietnamese Sentiment Analysis", layout="wide")
 st.title("📊 Sentiment Prediction App with PhoBERT")
 st.markdown("Upload file CSV chứa cột `comment` để dự đoán cảm xúc (POS/NEU/NEG), trực quan và gửi phản hồi nếu cần.")
@@ -52,7 +58,6 @@ if uploaded_file:
 
         # ==== Visualization Layout ====
         st.subheader("📈 Phân phối cảm xúc")
-
         col1, col2 = st.columns(2)
 
         with col1:
@@ -69,7 +74,6 @@ if uploaded_file:
             st.pyplot(fig2)
 
         st.subheader("☁️ WordCloud theo nhãn")
-
         labels = df['prediction'].unique()
         cols = st.columns(2)
 
@@ -83,26 +87,6 @@ if uploaded_file:
                 ax_wc.axis('off')
                 st.pyplot(fig_wc)
 
-        # Download
+        # Download kết quả
         st.subheader("📥 Tải kết quả")
         st.download_button("💾 Tải file kết quả", df.to_csv(index=False).encode('utf-8'), file_name="prediction_results.csv")
-
-        # Feedback UI
-        st.subheader("✏️ Góp ý nhãn dự đoán")
-        for idx, row in df.iterrows():
-            with st.expander(f"📌 Dòng {idx}: {row['comment'][:60]}..."):
-                st.write(f"**Dự đoán:** {row['prediction']}")
-                correct = st.selectbox("Chọn nhãn đúng:", encoder.classes_, key=f"select_{idx}")
-                if st.button("📩 Gửi phản hồi", key=f"send_{idx}"):
-                    fb = pd.DataFrame([{
-                        "index": idx,
-                        "comment": row['comment'],
-                        "model_prediction": row['prediction'],
-                        "correct_label": correct,
-                        "timestamp": time.strftime("%Y-%m-%d %H:%M:%S")
-                    }])
-                    if os.path.exists(FEEDBACK_PATH):
-                        fb.to_csv(FEEDBACK_PATH, mode="a", index=False, header=False)
-                    else:
-                        fb.to_csv(FEEDBACK_PATH, index=False)
-                    st.success("✅ Phản hồi đã được ghi nhận")
