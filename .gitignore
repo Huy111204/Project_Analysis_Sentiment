@@ -11,27 +11,50 @@ app/phobert_tokenizer/*
 train_model/Model/phobert_tokenizer/*
 train_model/Model/tokenizer_phobert_base/*
 
-# Checkpoint files (nặng)
+# Checkpoint files (quá nặng)
 train_model/Model/checkpoint-2361/model.safetensors
 train_model/Model/checkpoint-2361/optimizer.pt
 train_model/Model/checkpoint-2361/scheduler.pt
 train_model/Model/checkpoint-2361/training_args.bin
 
-# Label encoder nếu quá nặng
+# Label encoder nếu quá nặng (giữ lại nếu cần)
 app/label_encoder.pkl
 train_model/Model/label_encoder.pkl
 
-# ==== TEMP & PYTHON JUNK ====
+# Dạng file lớn thường gặp
+*.pt
+*.bin
+*.safetensors
+*.h5
+*.ckpt
+
+# ===== FULL FOLDER EXCLUDES (nếu toàn bộ model/tokenizer nặng) ====
+# Nhưng nên giữ folder rỗng nếu cần tải từ Drive
+app/phobert_model/
+app/phobert_tokenizer/
+train_model/Model/phobert_model/
+train_model/Model/phobert_tokenizer/
+train_model/Model/tokenizer_phobert_base/
+train_model/Model/checkpoint-2361/
+
+# ===== PYTHON & SYSTEM JUNK =====
 __pycache__/
 *.py[cod]
 *.swp
 *.tmp
 *.log
+*.pyc
+.DS_Store
+Thumbs.db
 
-# Jupyter temp
+# Jupyter
 .ipynb_checkpoints/
 
-# Streamlit temp
+# IDEs
+.vscode/
+.idea/
+
+# Streamlit
 .streamlit/
 
 # Virtualenv
@@ -39,6 +62,8 @@ env/
 venv/
 .venv/
 
-# Git filter-repo & OneDrive
-.git-rewrite/
+# OneDrive temp
 ~$*
+
+# Git filter-repo temp
+.git-rewrite/
