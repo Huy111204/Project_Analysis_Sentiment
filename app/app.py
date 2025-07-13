@@ -12,7 +12,7 @@ from google_sheets import append_feedback_to_gsheet  # Hàm ghi phản hồi lê
 
 # ===== Cấu hình đường dẫn =====
 MODEL_REPO = "Huy111204/phobert-vietnamese-sentiment"
-TOKENIZER_REPO = "Huy111204/phobert-vietnamese-sentiment/tokenizer"
+TOKENIZER_REPO = "Huy111204/phobert-vietnamese-sentiment"
 ENCODER_PATH = "app/label_encoder.pkl"
 
 # ===== Load model & tokenizer =====
