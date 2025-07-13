@@ -1,24 +1,27 @@
+import os
 import gdown
 import zipfile
-import os
 
-def download_and_extract(id, output_dir, zip_name):
-    if not os.path.exists(output_dir):
-        zip_path = f"{zip_name}.zip"
-        url = f"https://drive.google.com/uc?id={id}"
-        gdown.download(url, zip_path, quiet=False)
-        with zipfile.ZipFile(zip_path, "r") as zip_ref:
-            zip_ref.extractall(output_dir)
-        os.remove(zip_path)
+def download_file_from_drive(file_id, output_path):
+    url = f"https://drive.google.com/uc?id={file_id}"
+    gdown.download(url, output_path, quiet=False)
 
-def download_file(file_id, output_path):
-    if not os.path.exists(output_path):
-        url = f"https://drive.google.com/uc?id={file_id}"
-        gdown.download(url, output_path, quiet=False)
+def unzip_file(zip_path, extract_to):
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall(extract_to)
+    os.remove(zip_path)
 
-# Tải model & tokenizer
-download_and_extract("1zbrVlPPHrq899Azqf8w-sddGJb51g77b", "app/phobert_model", "phobert_model")
-download_and_extract("1k3l2DEBfPqAA2d1ye_OzBjM1K7eSCUpo", "app/phobert_tokenizer", "phobert_tokenizer")
+def download_all_files():
+    if not os.path.exists("app/phobert_model"):
+        print("📥 Downloading phobert_model...")
+        download_file_from_drive("1zbrVlPPHrq899Azqf8w-sddGJb51g77b", "phobert_model.zip")
+        unzip_file("phobert_model.zip", "app/")
 
-# Tải label encoder
-download_file("1Orf15r3YuE7jO5zYxtpiIwzZVWwWKxAx", "app/label_encoder.pkl")
+    if not os.path.exists("app/phobert_tokenizer"):
+        print("📥 Downloading tokenizer...")
+        download_file_from_drive("1k3l2DEBfPqAA2d1ye_OzBjM1K7eSCUpo", "phobert_tokenizer.zip")
+        unzip_file("phobert_tokenizer.zip", "app/")
+
+    if not os.path.exists("app/label_encoder.pkl"):
+        print("📥 Downloading label_encoder.pkl...")
+        download_file_from_drive("1Orf15r3YuE7jO5zYxtpiIwzZVWwWKxAx", "app/label_encoder.pkl")
