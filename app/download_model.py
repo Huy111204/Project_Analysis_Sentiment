@@ -15,12 +15,12 @@ def unzip_file(zip_path, extract_to):
 def download_all_files():
     if not os.path.exists("app/phobert_model"):
         print("📥 Downloading phobert_model...")
-        download_file_from_drive("1zbrVlPPHrq899Azqf8w-sddGJb51g77b", "phobert_model.zip")
+        download_file_from_drive("1ta0Sg8k15_GJByZRkfBczcUcz59JJPdi", "phobert_model.zip")
         unzip_file("phobert_model.zip", "app/")
 
     if not os.path.exists("app/phobert_tokenizer"):
         print("📥 Downloading tokenizer...")
-        download_file_from_drive("1k3l2DEBfPqAA2d1ye_OzBjM1K7eSCUpo", "phobert_tokenizer.zip")
+        download_file_from_drive("1jGEjYc1hl6nBZnPtq5uwm6sMMxgjSSUa", "phobert_tokenizer.zip")
         unzip_file("phobert_tokenizer.zip", "app/")
 
     if not os.path.exists("app/label_encoder.pkl"):
