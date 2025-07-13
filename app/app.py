@@ -10,11 +10,10 @@ import time
 import os
 
 # Load model/tokenizer/encoder
-MODEL_PATH = r"C:\Users\Lenovo\OneDrive - ueh.edu.vn\Documents\doan\cuoi_ky\app\phobert_model"
-TOKENIZER_PATH = r"C:\Users\Lenovo\OneDrive - ueh.edu.vn\Documents\doan\cuoi_ky\app\phobert_tokenizer"
-ENCODER_PATH = r"C:\Users\Lenovo\OneDrive - ueh.edu.vn\Documents\doan\cuoi_ky\app\label_encoder.pkl"
-FEEDBACK_PATH = r"C:\Users\Lenovo\OneDrive - ueh.edu.vn\Documents\doan\cuoi_ky\app\feedback.csv"
-
+MODEL_PATH = "app/phobert_model"
+TOKENIZER_PATH = "app/phobert_tokenizer"
+ENCODER_PATH = "app/label_encoder.pkl"
+FEEDBACK_PATH = "app/feedback.csv"
 
 model = AutoModelForSequenceClassification.from_pretrained(MODEL_PATH).to("cuda" if torch.cuda.is_available() else "cpu")
 tokenizer = AutoTokenizer.from_pretrained(TOKENIZER_PATH)
