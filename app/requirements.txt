@@ -8,5 +8,4 @@ pandas
 matplotlib
 seaborn
 scikit-learn
-gdown
-safetensors
+huggingface-hub
