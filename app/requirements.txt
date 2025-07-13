@@ -9,4 +9,5 @@ matplotlib
 seaborn
 scikit-learn
 gdown
-underthesea==6.5.0  
+underthesea==1.1.1
+ 
