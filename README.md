@@ -1,8 +1,7 @@
-## 🧠 Tải model & tokenizer từ Google Drive
+## 🚀 Cách sử dụng
 
-Một số file model lớn không được đẩy lên GitHub do vượt giới hạn dung lượng (>100MB).
+### 1. Tải mô hình từ Google Drive
+Link tải: [📁 Google Drive Models](https://drive.google.com/drive/folders/1LTQgY2lwTtc_aeSQaTrPC8XnNPaLTfLm?usp=sharing)
 
-🔗 Link Drive: https://drive.google.com/drive/folders/xxx
-
-**Sau khi tải xong**, bạn đặt vào đúng cấu trúc như sau:
+**Sau khi tải xong**, hãy đặt lại các file/folder vào đúng vị trí:
 
