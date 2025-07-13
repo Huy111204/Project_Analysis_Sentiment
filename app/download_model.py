@@ -19,7 +19,7 @@ def download_all_files():
     model_path = "app/phobert_model/config.json"
     if not os.path.exists(model_path):
         st.write("📥 Tải mô hình PhoBERT...")
-        download_file_from_drive("1ta0Sg8k15_GJByZRkfBczcUcz59JJPdi", "phobert_model.zip")
+        download_file_from_drive("14rWQSdiZLV0ig_Bm_3V7mtCxfj31Tb9j", "phobert_model.zip")
         unzip_file("phobert_model.zip", "app/")
     else:
         st.write("✅ Đã có model PhoBERT.")
