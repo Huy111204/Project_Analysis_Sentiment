@@ -9,4 +9,3 @@ matplotlib
 seaborn
 scikit-learn
 gdown
-pyvi==0.1.1
