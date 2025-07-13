@@ -7,6 +7,7 @@ def download_file_from_drive(file_id, output_path):
     gdown.download(url, output_path, quiet=False)
 
 def unzip_file(zip_path, extract_to):
+    os.makedirs(extract_to, exist_ok=True)
     with zipfile.ZipFile(zip_path, 'r') as zip_ref:
         zip_ref.extractall(extract_to)
     os.remove(zip_path)
