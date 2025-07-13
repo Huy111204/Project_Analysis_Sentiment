@@ -28,7 +28,7 @@ def download_all_files():
     tokenizer_path = "app/phobert_tokenizer/tokenizer_config.json"
     if not os.path.exists(tokenizer_path):
         st.write("📥 Tải tokenizer...")
-        download_file_from_drive("1jGEjYc1hl6nBZnPtq5uwm6sMMxgjSSUa", "phobert_tokenizer.zip")
+        download_file_from_drive("1qn6Q9CcD0TLHAJtOlKVQvJnlh1r-4xv3", "phobert_tokenizer.zip")
         unzip_file("phobert_tokenizer.zip", "app/")
     else:
         st.write("✅ Đã có tokenizer.")
