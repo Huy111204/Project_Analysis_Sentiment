@@ -1,0 +1,9 @@
+streamlit>=1.30
+transformers==4.36.2
+torch        
+underthesea
+emoji
+wordcloud
+joblib
+pandas
+matplotlib

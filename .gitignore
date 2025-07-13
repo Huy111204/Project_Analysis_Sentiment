@@ -1,0 +1,44 @@
+# ==== LARGE FILES >100MB (model, optimizer, tokenizer, etc) ====
+
+# PhoBERT model weights (quá 100MB)
+app/phobert_model/model.safetensors
+app/phobert_model/pytorch_model.bin
+train_model/Model/phobert_model/model.safetensors
+train_model/Model/phobert_model/pytorch_model.bin
+
+# Tokenizer files
+app/phobert_tokenizer/*
+train_model/Model/phobert_tokenizer/*
+train_model/Model/tokenizer_phobert_base/*
+
+# Checkpoint files (nặng)
+train_model/Model/checkpoint-2361/model.safetensors
+train_model/Model/checkpoint-2361/optimizer.pt
+train_model/Model/checkpoint-2361/scheduler.pt
+train_model/Model/checkpoint-2361/training_args.bin
+
+# Label encoder nếu quá nặng
+app/label_encoder.pkl
+train_model/Model/label_encoder.pkl
+
+# ==== TEMP & PYTHON JUNK ====
+__pycache__/
+*.py[cod]
+*.swp
+*.tmp
+*.log
+
+# Jupyter temp
+.ipynb_checkpoints/
+
+# Streamlit temp
+.streamlit/
+
+# Virtualenv
+env/
+venv/
+.venv/
+
+# Git filter-repo & OneDrive
+.git-rewrite/
+~$*
