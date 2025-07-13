@@ -7,15 +7,14 @@ import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import joblib
 import time
-import os
-from google_sheets import append_feedback_to_gsheet  # Hàm ghi phản hồi lên Google Sheets
+from google_sheets import append_feedback_to_gsheet
 
 # ===== Cấu hình đường dẫn =====
 MODEL_REPO = "Huy111204/phobert-vietnamese-sentiment"
 TOKENIZER_REPO = "Huy111204/phobert-vietnamese-sentiment"
 ENCODER_PATH = "app/label_encoder.pkl"
 
-# ===== Load model & tokenizer =====
+# ===== Load model & tokenizer & encoder =====
 @st.cache_resource
 def load_model():
     model = AutoModelForSequenceClassification.from_pretrained(MODEL_REPO)
@@ -33,7 +32,8 @@ model = load_model()
 tokenizer = load_tokenizer()
 encoder = load_encoder()
 
-# ===== Dự đoán cảm xúc =====
+# ===== Dự đoán cảm xúc (có cache) =====
+@st.cache_data(show_spinner=False)
 def predict(text):
     model.eval()
     inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True, max_length=64).to(model.device)
@@ -50,7 +50,15 @@ st.markdown("Upload file CSV chứa cột `comment` để dự đoán cảm xúc
 uploaded_file = st.file_uploader("📁 Chọn file CSV", type=["csv"])
 
 if uploaded_file:
-    df = pd.read_csv(uploaded_file)
+    try:
+        df = pd.read_csv(uploaded_file, encoding="utf-8")
+    except UnicodeDecodeError:
+        try:
+            df = pd.read_csv(uploaded_file, encoding="utf-8-sig")
+        except Exception as e:
+            st.error(f"❌ Lỗi đọc file: {e}")
+            st.stop()
+
     if "comment" not in df.columns:
         st.error("⚠️ File không có cột 'comment'")
     else:
@@ -77,6 +85,7 @@ if uploaded_file:
             ax2.set_title("Pie Chart")
             st.pyplot(fig2)
 
+        # ==== WordCloud ====
         st.subheader("☁️ WordCloud theo nhãn")
         labels = df['prediction'].unique()
         cols = st.columns(2)
@@ -97,7 +106,8 @@ if uploaded_file:
 
         # ==== Góp ý người dùng ====
         st.subheader("✏️ Góp ý nhãn dự đoán")
-        for idx, row in df.iterrows():
+        max_feedback = 50  # tránh spam
+        for idx, row in df.head(max_feedback).iterrows():
             with st.expander(f"📌 Dòng {idx}: {row['comment'][:60]}..."):
                 st.write(f"**Dự đoán:** {row['prediction']}")
                 correct = st.selectbox("Chọn nhãn đúng:", encoder.classes_, key=f"select_{idx}")
@@ -110,6 +120,6 @@ if uploaded_file:
                     }
                     success = append_feedback_to_gsheet(feedback_data)
                     if success:
-                        st.success("✅ Phản hồi đã được ghi nhận và lưu lên Google Sheets")
+                        st.success("✅ Phản hồi đã được ghi nhận")
                     else:
                         st.error("❌ Không thể ghi phản hồi lên Google Sheets")
