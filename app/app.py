@@ -17,7 +17,7 @@ def load_model():
 
 @st.cache_resource
 def load_tokenizer():
-    return AutoTokenizer.from_pretrained("Huy111204/phobert-vietnamese-sentiment/tokenizer")
+    return AutoTokenizer.from_pretrained("Huy111204/phobert-vietnamese-sentiment")
 
 @st.cache_data
 def load_encoder():
