@@ -37,3 +37,19 @@ def append_feedback_to_gsheet(feedback_dict):
     except Exception as e:
         print("❌ Gặp lỗi khi ghi vào Google Sheet:", e)
         return False
+def write_to_gsheet(feedback_df):
+    try:
+        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+        creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
+        client = gspread.authorize(creds)
+
+        sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/11GFPE5lCZZw3zrmzV0dEQw1QBXHszPAECNX52iM6uPg/edit#gid=0")
+        worksheet = sheet.sheet1
+
+        # Convert DataFrame to list of lists
+        rows = feedback_df.astype(str).values.tolist()
+        worksheet.append_rows(rows)
+        return True
+    except Exception as e:
+        print(f"Google Sheets error: {e}")
+        return False
