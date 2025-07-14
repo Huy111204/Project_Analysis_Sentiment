@@ -1,7 +1,6 @@
 <!-- Badges -->
 [![Streamlit](https://img.shields.io/badge/Streamlit-deployed-brightgreen?logo=streamlit)](https://projectanalysissentiment.streamlit.app)
 [![Python](https://img.shields.io/badge/Python-3.13.5-blue?logo=python)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-lightgrey)](https://github.com/Huy111204/Project_Analysis_Sentiment/blob/main/LICENSE)
 
 # 🧠 Sentiment Analysis Web App with PhoBERT
 
@@ -14,13 +13,13 @@
 
 ---
 
-## 🚀Truy cập ứng dụng online
+## Truy cập ứng dụng online
 **Dùng thử ngay tại đây:**  
 🔗 [https://projectanalysissentiment.streamlit.app](https://projectanalysissentiment.streamlit.app/)
 
 ---
 
-## 📦 Các tài nguyên cần thiết cho mô hình
+## Các tài nguyên cần thiết cho mô hình
 Ứng dụng sử dụng mô hình huấn luyện sẵn được lưu trữ tại Hugging Face:  
 **Hugging Face Repo:** [Huy111204/phobert-vietnamese-sentiment](https://huggingface.co/Huy111204/phobert-vietnamese-sentiment/tree/main)
 
@@ -33,17 +32,17 @@ Tất cả tài nguyên có đầy đủ trên HuggingFace bạn có thể tải
 
 ---
 
-## 📊 Phản hồi người dùng
+## Phản hồi người dùng
 
 Người dùng có thể gửi phản hồi về nhãn dự đoán sai khi truy cập ứng dụng online. Dữ liệu được lưu tại:  
 📄 [Google Sheet - Góp ý nhãn](https://docs.google.com/spreadsheets/d/11GFPE5lCZZw3zrmzV0dEQw1QBXHszPAECNX52iM6uPg/edit?gid=0#gid=0)
 
 ---
 
-## 🛠️ Cài đặt & chạy cục bộ
+## Cài đặt & chạy cục bộ
 Người dùng vào link drive : (https://drive.google.com/drive/folders/1LTQgY2lwTtc_aeSQaTrPC8XnNPaLTfLm?usp=sharing)
 - Vào thư mục app và download về máy 
-- Mở cmd hoặc windows PowerShell
+- Mở Terminal
 ```bash
 # Cài đặt thư viện cần thiết
 pip install -r requirements.txt
