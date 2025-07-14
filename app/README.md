@@ -1,6 +1,10 @@
 <!-- Badges -->
+<!-- Badges -->
 [![Streamlit](https://img.shields.io/badge/Streamlit-deployed-brightgreen?logo=streamlit)](https://projectanalysissentiment.streamlit.app)
-[![Python](https://img.shields.io/badge/Python-3.13.5-blue?logo=python)](https://www.python.org/)
+[![Google Drive](https://img.shields.io/badge/Google%20Drive-Model%20Storage-blue?logo=google-drive)](https://drive.google.com/drive/folders/1LTQgY2lwTtc_aeSQaTrPC8XnNPaLTfLm?usp=sharing)
+[![HuggingFace Model](https://img.shields.io/badge/HuggingFace-phobert--vietnamese--sentiment-orange?logo=huggingface)](https://huggingface.co/Huy111204/phobert-vietnamese-sentiment/tree/main)
+[![Sentiment Feedback](https://img.shields.io/badge/Feedback-Google%20Sheets-yellow?logo=googlesheets)](https://docs.google.com/spreadsheets/d/11GFPE5lCZZw3zrmzV0dEQw1QBXHszPAECNX52iM6uPg/edit?usp=sharing)
+
 
 # 🧠 Sentiment Analysis Web App with PhoBERT
 
