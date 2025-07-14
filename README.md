@@ -11,7 +11,7 @@
 
 ---
 ## ✨ Features
-![Uploading image.png…]()
+<img width="927" height="614" alt="image" src="https://github.com/user-attachments/assets/090c0ae5-edbe-4b8d-a6b1-374cd5e2fe4a" />
 
 -  Thu thập dữ liệu cảm xúc từ Sendo.vn
 -  Tiền xử lý dữ liệu văn bản
