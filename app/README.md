@@ -1,5 +1,4 @@
-<!-- Badges -->
-<!-- Badges -->
+
 [![Streamlit](https://img.shields.io/badge/Streamlit-deployed-brightgreen?logo=streamlit)](https://projectanalysissentiment.streamlit.app)
 [![Google Drive](https://img.shields.io/badge/Google%20Drive-Model%20Storage-blue?logo=google-drive)](https://drive.google.com/drive/folders/1LTQgY2lwTtc_aeSQaTrPC8XnNPaLTfLm?usp=sharing)
 [![HuggingFace Model](https://img.shields.io/badge/HuggingFace-phobert--vietnamese--sentiment-orange?logo=huggingface)](https://huggingface.co/Huy111204/phobert-vietnamese-sentiment/tree/main)
