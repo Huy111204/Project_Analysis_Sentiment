@@ -10,11 +10,11 @@
 - Trực quan hóa kết quả qua biểu đồ cột, biểu đồ tròn và WordCloud
 - Gửi phản hồi khi mô hình dự đoán sai
 - Tự động lưu phản hồi trên **Google Sheets** để liên tục cải tiến
-<img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/38a9e461-d838-49fa-8671-ebea15ae47a1" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e5161e9c-4789-4fa8-9d2c-d43f079c055b" />
+<img width="1919" height="893" alt="image" src="https://github.com/user-attachments/assets/8c2d6a42-f04f-47f4-81c6-9125e4c5659e" />
+<img width="1919" height="935" alt="image" src="https://github.com/user-attachments/assets/cffd93a0-55ff-420b-a0ca-8ae755e0b6ab" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3ae83140-4c7a-47c0-b427-369b359949fb" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6458481b-cf74-4b43-bbc9-8c94c022c846" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c544ab14-ef78-4979-9b05-d2a8720d44d0" />
+<img width="1919" height="723" alt="image" src="https://github.com/user-attachments/assets/5c97432b-a39f-4724-84a3-bb41d8fb1ae3" />
 
 ---
 
