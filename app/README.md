@@ -35,19 +35,21 @@ Tất cả tài nguyên có đầy đủ trên HuggingFace bạn có thể tải
 
 ## 📊 Phản hồi người dùng
 
-Người dùng có thể gửi phản hồi về nhãn dự đoán sai. Dữ liệu được lưu tại:  
+Người dùng có thể gửi phản hồi về nhãn dự đoán sai khi truy cập ứng dụng online. Dữ liệu được lưu tại:  
 📄 [Google Sheet - Góp ý nhãn](https://docs.google.com/spreadsheets/d/11GFPE5lCZZw3zrmzV0dEQw1QBXHszPAECNX52iM6uPg/edit?gid=0#gid=0)
 
 ---
 
 ## 🛠️ Cài đặt & chạy cục bộ
 Người dùng vào link drive : (https://drive.google.com/drive/folders/1LTQgY2lwTtc_aeSQaTrPC8XnNPaLTfLm?usp=sharing)
-Vào thư mục app download về máy 
-Mở cmd hoặc windows PowerShell
+- Vào thư mục app và download về máy 
+- Mở cmd hoặc windows PowerShell
 ```bash
 # Cài đặt thư viện cần thiết
 pip install -r requirements.txt
+
 # Đưa tới thư mục app 
 cd "Path" #Thay Path bằng đường dẫn tới thư mục app vừa tải ví dụ cd "F:\app"
+
 # Chạy ứng dụng Streamlit
 streamlit run app.py
