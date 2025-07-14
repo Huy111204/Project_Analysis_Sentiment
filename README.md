@@ -2,8 +2,8 @@
 
 [![Streamlit App](https://img.shields.io/badge/Streamlit-App-blue?logo=streamlit)](https://projectanalysissentiment.streamlit.app)  
 [![HuggingFace Model](https://img.shields.io/badge/HuggingFace-phobert--vietnamese--sentiment-orange?logo=huggingface)](https://huggingface.co/Huy111204/phobert-vietnamese-sentiment/tree/main)  
-[![W&B Report](https://img.shields.io/badge/W%26B-ML_vs_PhoBERT-violet?logo=wandb)
-[![W&B Report](https://wandb.ai/hoanghuytp9-7-tr-ng-h-kinh-t-tp-h-ch-minh-ueh/traditional_ml-vs-phobert/reports/So-s-nh-hi-u-su-t-c-c-m-h-nh-Machine-Learning-trong-ph-n-lo-i-c-m-x-c-ti-ng-Vi-t--VmlldzoxMzU2MTAxNA?accessToken=a01w3r7vp17l89ogcpiffnhbe18g68fe5wa437jfxin4o2z0v1g2yr4wmp6a24lu)  
+[![W&B: Traditional ML](https://img.shields.io/badge/W%26B-Traditional%20ML-yellow?logo=wandb)](https://wandb.ai/hoanghuytp9-7-tr-ng-h-kinh-t-tp-h-ch-minh-ueh/traditional_ml-vs-phobert/reports/So-s-nh-hi-u-su-t-c-c-m-h-nh-Machine-Learning-trong-ph-n-lo-i-c-m-x-c-ti-ng-Vi-t--VmlldzoxMzU2MTAxNA?accessToken=a01w3r7vp17l89ogcpiffnhbe18g68fe5wa437jfxin4o2z0v1g2yr4wmp6a24lu)  
+[![W&B: PhoBERT Fine-tune](https://img.shields.io/badge/W%26B-PhoBERT%20Fine--tune-red?logo=wandb)](https://wandb.ai/hoanghuytp9-7-tr-ng-h-kinh-t-tp-h-ch-minh-ueh/yvq0mzam)
 
 ---
 
