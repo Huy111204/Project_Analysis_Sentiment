@@ -1,4 +1,4 @@
-import os
+"""import os
 import gdown
 import streamlit as st
 
@@ -46,4 +46,4 @@ def download_all_files():
         download_file_from_drive("1Orf15r3YuE7jO5zYxtpiIwzZVWwWKxAx", encoder_path)
         st.write("✅ Đã tải xong label_encoder.pkl")
     else:
-        st.write("✅ Đã có label_encoder.pkl")
+        st.write("✅ Đã có label_encoder.pkl")"""
