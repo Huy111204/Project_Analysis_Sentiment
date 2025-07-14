@@ -1,31 +1,28 @@
 <!-- Badges -->
-[![Streamlit](https://img.shields.io/badge/Streamlit-deployed-brightgreen)](https://projectanalysissentiment.streamlit.app)  
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)  
-[![License](https://img.shields.io/badge/License-MIT-lightgrey)](../LICENSE)
+[![Streamlit](https://img.shields.io/badge/Streamlit-deployed-brightgreen?logo=streamlit)](https://projectanalysissentiment.streamlit.app)
+[![Python](https://img.shields.io/badge/Python-3.13.5-blue?logo=python)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey)](https://github.com/Huy111204/Project_Analysis_Sentiment/blob/main/LICENSE)
 
 # 🧠 Sentiment Analysis Web App with PhoBERT
 
-Ứng dụng này được xây dựng bằng **Streamlit**, cho phép người dùng:
-
-- 📁 Tải file CSV có chứa cột `comment`
-- 🤖 Dự đoán cảm xúc (`POS`, `NEU`, `NEG`) bằng mô hình **PhoBERT**
-- 📈 Trực quan hóa kết quả bằng biểu đồ cột, biểu đồ tròn và WordCloud
-- ✍️ Gửi phản hồi nếu mô hình dự đoán sai nhãn
-- ☁️ Lưu phản hồi trực tiếp lên **Google Sheets** để cải tiến mô hình sau này
+Ứng dụng **Streamlit** giúp bạn:
+- Tải lên file CSV có cột `comment`
+- Dự đoán cảm xúc (`POS`, `NEU`, `NEG`) bằng mô hình **PhoBERT**
+- Trực quan hóa kết quả qua biểu đồ cột, biểu đồ tròn và WordCloud
+- Gửi phản hồi khi mô hình dự đoán sai
+- Tự động lưu phản hồi trên **Google Sheets** để liên tục cải tiến
 
 ---
 
-## 🚀 Truy cập ứng dụng online
-
-👉 **Dùng thử ngay tại đây:**  
+## 🚀Truy cập ứng dụng online
+**Dùng thử ngay tại đây:**  
 🔗 [https://projectanalysissentiment.streamlit.app](https://projectanalysissentiment.streamlit.app/)
 
 ---
 
 ## 📦 Các tài nguyên cần thiết cho mô hình
-
 Ứng dụng sử dụng mô hình huấn luyện sẵn được lưu trữ tại Hugging Face:  
-🔗 **Hugging Face Repo:** [Huy111204/phobert-vietnamese-sentiment](https://huggingface.co/Huy111204/phobert-vietnamese-sentiment/tree/main)
+**Hugging Face Repo:** [Huy111204/phobert-vietnamese-sentiment](https://huggingface.co/Huy111204/phobert-vietnamese-sentiment/tree/main)
 
 Bao gồm:
 - `model.safetensors`,`config.json` (phobert_model)
