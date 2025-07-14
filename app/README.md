@@ -1,3 +1,8 @@
+<!-- Badges -->
+[![Streamlit](https://img.shields.io/badge/Streamlit-deployed-brightgreen)](https://projectanalysissentiment.streamlit.app)  
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)  
+[![License](https://img.shields.io/badge/License-MIT-lightgrey)](../LICENSE)
+
 # 🧠 Sentiment Analysis Web App with PhoBERT
 
 Ứng dụng này được xây dựng bằng **Streamlit**, cho phép người dùng:
