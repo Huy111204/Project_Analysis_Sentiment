@@ -1,6 +1,6 @@
 # 📊 Project Analysis Sentiment – Vietnamese E‑Commerce Reviews
 
-![Streamlit](https://img.shields.io/badge/Streamlit‑app-blue) ![HuggingFace](https://img.shields.io/badge/HuggingFace‑model-orange) ![W&B](https://img.shields.io/badge/W%26B‑report‑violet)
+![Streamlit](https://projectanalysissentiment.streamlit.app/) ![HuggingFace](https://huggingface.co/Huy111204/phobert-vietnamese-sentiment/tree/main) ![W&B](https://api.wandb.ai/links/hoanghuytp9-7-tr-ng-h-kinh-t-tp-h-ch-minh-ueh/yvq0mzam) ![W&B](https://wandb.ai/hoanghuytp9-7-tr-ng-h-kinh-t-tp-h-ch-minh-ueh/traditional_ml-vs-phobert/reports/So-s-nh-hi-u-su-t-c-c-m-h-nh-Machine-Learning-trong-ph-n-lo-i-c-m-x-c-ti-ng-Vi-t--VmlldzoxMzU2MTAxNA?accessToken=a01w3r7vp17l89ogcpiffnhbe18g68fe5wa437jfxin4o2z0v1g2yr4wmp6a24lu)
 
 ---
 
