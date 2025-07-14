@@ -11,6 +11,7 @@
 
 ---
 ## ✨ Features
+![Uploading image.png…]()
 
 -  Thu thập dữ liệu cảm xúc từ Sendo.vn
 -  Tiền xử lý dữ liệu văn bản
