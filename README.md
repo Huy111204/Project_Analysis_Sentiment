@@ -2,7 +2,7 @@
 
 [![Streamlit App](https://img.shields.io/badge/Streamlit-App-blue?logo=streamlit)](https://projectanalysissentiment.streamlit.app)  
 [![HuggingFace Model](https://img.shields.io/badge/HuggingFace-phobert--vietnamese--sentiment-orange?logo=huggingface)](https://huggingface.co/Huy111204/phobert-vietnamese-sentiment/tree/main)  
-[![W&B Report](https://img.shields.io/badge/W%26B-ML_vs_PhoBERT-violet?logo=wandb)](https://wandb.ai/hoanghuytp9-7-tr-ng-h-kinh-t-tp-h-ch-minh-ueh/traditional_ml-vs-phobert/reports/So-s-nh-hi-u-su-t-c-c-m-h-nh-Machine-Learning-trong-ph-n-lo-i-c-m-x-c-ti-ng-Vi-t--VmlldzoxMzU2MTAxNA)
+[![W&B Report](https://img.shields.io/badge/W%26B-ML_vs_PhoBERT-violet?logo=wandb)
 
 
 ---
