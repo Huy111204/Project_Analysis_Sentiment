@@ -1,4 +1,4 @@
-# 📊 Vietnamese Sentiment Analysis from E-Commerce Comments
+# Vietnamese Sentiment Analysis from E-Commerce Comments
 
 <!-- Badges -->
 [![Streamlit App](https://img.shields.io/badge/Streamlit-App-blue?logo=streamlit)](https://projectanalysissentiment.streamlit.app)
@@ -10,7 +10,7 @@
 
 
 ---
-## ✨ Features
+## Features
 <img width="927" height="614" alt="image" src="https://github.com/user-attachments/assets/090c0ae5-edbe-4b8d-a6b1-374cd5e2fe4a" />
 
 -  Thu thập dữ liệu cảm xúc từ Sendo.vn
@@ -21,7 +21,7 @@
 -  Thu thập phản hồi người dùng qua Google Sheets
 -  Báo cáo chi tiết mô hình qua Weights & Biases
 ---
-## 🔥 Tổng quan
+## Tổng quan
 
 Pipeline phân tích cảm xúc từ bình luận thương mại điện tử tiếng Việt, bao gồm:
 
@@ -33,31 +33,31 @@ Pipeline phân tích cảm xúc từ bình luận thương mại điện tử ti
    - Các mô hình: **Logistic Regression**, **Linear SVM**, **Multinomial Naive Bayes**
    - - Vector hóa bằng **TF-IDF**
    - Đánh giá bằng: `Accuracy`, `F1-score`, `Precision`, `Recall`, `Confusion Matrix`  
-   👉 [🔗 Xem báo cáo W&B](https://wandb.ai/hoanghuytp9-7-tr-ng-h-kinh-t-tp-h-ch-minh-ueh/traditional_ml-vs-phobert/reports/So-s-nh-hi-u-su-t-c-c-m-h-nh-Machine-Learning-trong-ph-n-lo-i-c-m-x-c-ti-ng-Vi-t--VmlldzoxMzU2MTAxNA?accessToken=a01w3r7vp17l89ogcpiffnhbe18g68fe5wa437jfxin4o2z0v1g2yr4wmp6a24lu)
+      [🔗 Xem báo cáo W&B](https://wandb.ai/hoanghuytp9-7-tr-ng-h-kinh-t-tp-h-ch-minh-ueh/traditional_ml-vs-phobert/reports/So-s-nh-hi-u-su-t-c-c-m-h-nh-Machine-Learning-trong-ph-n-lo-i-c-m-x-c-ti-ng-Vi-t--VmlldzoxMzU2MTAxNA?accessToken=a01w3r7vp17l89ogcpiffnhbe18g68fe5wa437jfxin4o2z0v1g2yr4wmp6a24lu)
 
 ### 3. **Fine-tune PhoBERT**
    - Mô hình gốc: [`wonrax/phobert-base-vietnamese-sentiment`](https://huggingface.co/wonrax/phobert-base-vietnamese-sentiment)
    - Fine-tune mô hình wonrax/phobert-base-vietnamese-sentiment trên tập dữ liệu đã tiền xử lý, sử dụng Hugging Face Trainer, token hóa, huấn luyện. 
    - Lưu model & tokenizer lên Hugging Face
    - Đánh giá bằng Hugging Face `Trainer`    
-   👉 [🔗Xem báo cáo trên W&B](https://api.wandb.ai/links/hoanghuytp9-7-tr-ng-h-kinh-t-tp-h-ch-minh-ueh/yvq0mzam)  
-   👉 [🔗Model trên Hugging Face](https://huggingface.co/Huy111204/phobert-vietnamese-sentiment/tree/main)
+      [🔗Xem báo cáo trên W&B](https://api.wandb.ai/links/hoanghuytp9-7-tr-ng-h-kinh-t-tp-h-ch-minh-ueh/yvq0mzam)  
+      [🔗Model trên Hugging Face](https://huggingface.co/Huy111204/phobert-vietnamese-sentiment/tree/main)
 
 ### 4. **Ứng dụng Streamlit** 
    - Upload file CSV có cột `comment` để phân tích cảm xúc (POS/NEU/NEG)
    - Visualize bằng Bar chart, Pie chart, WordCloud  
    - Cho phép người dùng tải kết quả `.csv` sau khi dự đoán 
    - Feedback UI: người dùng đánh giá lại nhãn → lưu trực tiếp lên Google Sheets 
-   👉 [🔗 App]([https://projectanalysissentiment.streamlit.app](https://projectanalysissentiment.streamlit.app/))
+      [🔗 App]([https://projectanalysissentiment.streamlit.app](https://projectanalysissentiment.streamlit.app/))
 
 ### 5. **Phản hồi & Continuous Learning** 
    - Ghi nhận phản hồi nhãn đúng từ người dùng (qua giao diện Streamlit)
    - Dữ liệu feedback được lưu vào:  
-   👉 [🔗 Google Sheets Feedback](https://docs.google.com/spreadsheets/d/11GFPE5lCZZw3zrmzV0dEQw1QBXHszPAECNX52iM6uPg/edit?usp=sharing)
+      [🔗 Google Sheets Feedback](https://docs.google.com/spreadsheets/d/11GFPE5lCZZw3zrmzV0dEQw1QBXHszPAECNX52iM6uPg/edit?usp=sharing)
 
 ---
 
-## 🗂️ Cấu trúc thư mục
+## Cấu trúc thư mục
 
 ```bash
 Project_Analysis_Sentiment/
