@@ -30,11 +30,14 @@ def load_tokenizer():
 
 @st.cache_resource
 def load_encoder():
-    url = "https://huggingface.co/Huy111204/phobert-vietnamese-sentiment/resolve/main/label_encoder.pkl"
-    response = requests.get(url)
-    with open("label_encoder.pkl", "wb") as f:
-        f.write(response.content)
-    return joblib.load("label_encoder.pkl")
+    if not os.path.exists(ENCODER_PATH):
+        url = "https://huggingface.co/Huy111204/phobert-vietnamese-sentiment/resolve/main/label_encoder.pkl"
+        response = requests.get(url)
+        if response.status_code != 200:
+            raise RuntimeError(f"Lỗi tải encoder từ Hugging Face: {response.status_code}")
+        with open(ENCODER_PATH, "wb") as f:
+            f.write(response.content)
+    return joblib.load(ENCODER_PATH)
 
 model = load_model()
 tokenizer = load_tokenizer()
