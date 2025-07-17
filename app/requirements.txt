@@ -2,6 +2,7 @@ streamlit>=1.30
 transformers==4.36.2
 torch
 pandas
+scikit-learn
 matplotlib
 seaborn
 wordcloud
