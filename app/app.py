@@ -12,7 +12,9 @@ from google_sheets import append_feedback_to_gsheet
 # ===== Cấu hình đường dẫn =====
 MODEL_REPO = "Huy111204/phobert-vietnamese-sentiment"
 TOKENIZER_REPO = "Huy111204/phobert-vietnamese-sentiment"
-ENCODER_PATH = "label_encoder.pkl"
+# Đảm bảo đúng đường dẫn dù chạy ở đâu
+APP_DIR = os.path.dirname(os.path.abspath(__file__))
+ENCODER_PATH = os.path.join(APP_DIR, "label_encoder.pkl")
 
 # ===== Load model & tokenizer & encoder =====
 @st.cache_resource
@@ -26,6 +28,8 @@ def load_tokenizer():
 
 @st.cache_resource
 def load_encoder():
+    if not os.path.exists(ENCODER_PATH):
+        raise FileNotFoundError(f"Không tìm thấy encoder tại: {ENCODER_PATH}")
     return joblib.load(ENCODER_PATH)
 
 model = load_model()
