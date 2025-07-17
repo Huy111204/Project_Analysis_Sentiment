@@ -1,4 +1,5 @@
 import os
+import requests
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -29,9 +30,11 @@ def load_tokenizer():
 
 @st.cache_resource
 def load_encoder():
-    if not os.path.exists(ENCODER_PATH):
-        raise FileNotFoundError(f"Không tìm thấy encoder tại: {ENCODER_PATH}")
-    return joblib.load(ENCODER_PATH)
+    url = "https://huggingface.co/Huy111204/phobert-vietnamese-sentiment/resolve/main/label_encoder.pkl"
+    response = requests.get(url)
+    with open("label_encoder.pkl", "wb") as f:
+        f.write(response.content)
+    return joblib.load("label_encoder.pkl")
 
 model = load_model()
 tokenizer = load_tokenizer()
