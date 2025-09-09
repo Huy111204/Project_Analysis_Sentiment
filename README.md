@@ -16,12 +16,12 @@
 
 Data collection from Sendo.vn using Selenium.
 
-Text preprocessing: lowercase conversion, normalization (URLs, numbers, emojis), tokenization (via underthesea), stopword removal.
+Text preprocessing: lowercase conversion, normalization, tokenization, stopword .
 
-Comparative evaluation of traditional ML models: Logistic Regression, Linear SVM, and Multinomial Naive Bayes, with TF-IDF vectorization and metrics like Accuracy, F1-score, Precision, Recall, and Confusion Matrix.
+Comparative evaluation of traditional ML models: Logistic Regression, Linear SVM, and Naive Bayes, with TF-IDF vectorization and metrics like Accuracy, F1-score, Precision, Recall, and Confusion Matrix.
 
 Fine-tuning of PhoBERT (base model from wonrax/phobert-base-vietnamese-sentiment) on the processed dataset. Model and tokenizer uploaded to Hugging Face.
 
-Interactive Streamlit app: upload CSV (with comment column), visualize results via bar charts, pie charts, word clouds, download predictions, and collect user feedback.
+Interactive app: upload CSV, visualize results via bar charts, pie charts, word clouds, download predictions, and collect user feedback.
 
 Continuous learning loop: user-corrected labels via feedback are saved to Google Sheets for model enhancement.
