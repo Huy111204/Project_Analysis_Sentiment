@@ -12,31 +12,16 @@
 
 <img width="927" height="614" alt="image" src="https://github.com/user-attachments/assets/090c0ae5-edbe-4b8d-a6b1-374cd5e2fe4a" />
 
-## Key Features
+## Features
 
-### Data collection from Sendo.vn using Selenium.
+Data collection from Sendo.vn using Selenium.
 
-### Text preprocessing: lowercase conversion, normalization (URLs, numbers, emojis), tokenization (via underthesea), stopword removal.
+Text preprocessing: lowercase conversion, normalization (URLs, numbers, emojis), tokenization (via underthesea), stopword removal.
 
-### Comparative evaluation of traditional ML models: Logistic Regression, Linear SVM, and Multinomial Naive Bayes, with TF-IDF vectorization and metrics like Accuracy, F1-score, Precision, Recall, and Confusion Matrix.
+Comparative evaluation of traditional ML models: Logistic Regression, Linear SVM, and Multinomial Naive Bayes, with TF-IDF vectorization and metrics like Accuracy, F1-score, Precision, Recall, and Confusion Matrix.
 
-### Fine-tuning of PhoBERT (base model from wonrax/phobert-base-vietnamese-sentiment) on the processed dataset. Model and tokenizer uploaded to Hugging Face.
+Fine-tuning of PhoBERT (base model from wonrax/phobert-base-vietnamese-sentiment) on the processed dataset. Model and tokenizer uploaded to Hugging Face.
 
-### Interactive Streamlit app: upload CSV (with comment column), visualize results via bar charts, pie charts, word clouds, download predictions, and collect user feedback.
+Interactive Streamlit app: upload CSV (with comment column), visualize results via bar charts, pie charts, word clouds, download predictions, and collect user feedback.
 
-### Continuous learning loop: user-corrected labels via feedback are saved to Google Sheets for model enhancement.
-
----
-
-## Repository Structure
-
-```bash
-Project_Analysis_Sentiment/
-├── crawl_data_sendo/            # Data collection scripts
-├── train_model/                 # Traditional models + PhoBERT fine-tuning                  
-├── app/                         # Streamlit application
-│   ├── app.py                  
-│   ├── google_sheets.py         
-│   ├── requirements.txt         # Dependencies 
-├── .gitignore
-└── README.md                   
+Continuous learning loop: user-corrected labels via feedback are saved to Google Sheets for model enhancement.
