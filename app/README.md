@@ -20,22 +20,13 @@
 
 ---
 
-## Truy cập ứng dụng online
-**Dùng thử ngay tại đây:**  
-🔗 [https://projectanalysissentiment.streamlit.app](https://projectanalysissentiment.streamlit.app/)
-
----
-
 ## Các tài nguyên cần thiết cho mô hình
-Ứng dụng sử dụng mô hình huấn luyện sẵn được lưu trữ tại Hugging Face:  
+
 **Hugging Face Repo:** [Huy111204/phobert-vietnamese-sentiment](https://huggingface.co/Huy111204/phobert-vietnamese-sentiment/tree/main)
 
-Bao gồm:
 - `model.safetensors`,`config.json` (phobert_model)
 - `tokenizer_config.json`, `vocab.txt`, `special_tokens_map.json`,`bpe.codes`,`added_tokens.json` (phobert_tokenizer)
 - `label_encoder.pkl` (mã hóa nhãn cảm xúc)
-
-Tất cả tài nguyên có đầy đủ trên HuggingFace bạn có thể tải đầy đủ về để chạy trên local 
 
 ---
 
@@ -46,16 +37,16 @@ Người dùng có thể gửi phản hồi về nhãn dự đoán sai khi truy 
 
 ---
 
-## Cài đặt & chạy cục bộ
-Người dùng vào link drive : (https://drive.google.com/drive/folders/1LTQgY2lwTtc_aeSQaTrPC8XnNPaLTfLm?usp=sharing)
-- Vào thư mục app và download về máy 
-- Mở Terminal
+## To use
+link drive : (https://drive.google.com/drive/folders/1LTQgY2lwTtc_aeSQaTrPC8XnNPaLTfLm?usp=sharing)
+- Open app and download 
+- Terminal
 ```bash
-# Cài đặt thư viện cần thiết
+# requirements
 pip install -r requirements.txt
 
-# Đưa tới thư mục app 
 cd "Path" #Thay Path bằng đường dẫn tới thư mục app vừa tải ví dụ cd "F:\app"
 
-# Chạy ứng dụng Streamlit
+# Run Streamlit
 streamlit run app.py
+
